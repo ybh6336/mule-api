@@ -9,7 +9,24 @@
           "classSimpleName": "MuleSystemProperties",
           "elementKind": "class",
           "justification": "Added system properties class"
-        }
+        },
+        {
+          "code": "java.class.added",
+          "new": "interface org.mule.runtime.api.healthcheck.HealthCheckValidator",
+          "package": "org.mule.runtime.api.healthcheck",
+          "classSimpleName": "HealthCheckValidator",
+          "elementKind": "interface",
+          "justification": "healthcheck cherry-pick"
+        },
+        {
+          "code": "java.class.added",
+          "new": "interface org.mule.runtime.api.healthcheck.ReadyStatus",
+          "package": "org.mule.runtime.api.healthcheck",
+          "classSimpleName": "ReadyStatus",
+          "elementKind": "interface",
+          "justification": "healthcheck cherry-pick"
+        ,}
+
       ]
     }
   },
