@@ -1,4 +1,4 @@
-@Library('mule-runtime-library@MULE-17435') _
+@Library('mule-runtime-library@MULE-17435-MD5') _
 
 def UPSTREAM_PROJECTS_LIST = [ "Mule-runtime/metadata-model-api/master",
                                "Mule-runtime/mule-artifact-declaration/master" ]
