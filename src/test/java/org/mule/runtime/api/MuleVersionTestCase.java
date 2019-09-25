@@ -46,7 +46,7 @@ public class MuleVersionTestCase {
 
   @Test
   public void testEquals() {
-    assertThat(new MuleVersion("3.3.3"), is(new MuleVersion("3.3.3")));
+    assertThat(new MuleVersion("3.3.3"), is(new MuleVersion("3.3.3-PEPE")));
     assertThat(new MuleVersion("3.4"), is(new MuleVersion("3.4")));
     assertThat(new MuleVersion("3.4-RC1"), is(new MuleVersion("3.4-RC1")));
   }
