@@ -15,6 +15,7 @@ import static org.mule.runtime.api.metadata.DataType.fromType;
 
 import org.mule.runtime.api.component.location.ComponentLocation;
 import org.mule.runtime.api.event.Event;
+import org.mule.runtime.api.event.EventContext;
 import org.mule.runtime.api.message.Error;
 import org.mule.runtime.api.message.Message;
 import org.mule.runtime.api.metadata.DataType;
@@ -39,6 +40,7 @@ public class BindingContextUtils {
   public static final String PAYLOAD = "payload";
   public static final String DATA_TYPE = "dataType";
   public static final String ATTRIBUTES = "attributes";
+  public static final String EVENT_CONTEXT = "eventContext";
   public static final String ERROR = "error";
   public static final String CORRELATION_ID = "correlationId";
   public static final String VARS = "vars";
@@ -80,6 +82,7 @@ public class BindingContextUtils {
   private static final DataType ERROR_DATA_TYPE = fromType(Error.class);
   private static final DataType AUTH_DATA_TYPE = fromType(Authentication.class);
   private static final DataType FLOW_DATA_TYPE = fromType(FlowVariablesAccessor.class);
+  private static final DataType EVENT_CONTEXT_DATA_TYPE = fromType(EventContext.class);
 
   public final static TypedValue EMPTY_VARS = new TypedValue<>(emptyMap(), VARS_DATA_TYPE);
   private final static Supplier<TypedValue> EMPTY_VARS_SUPPLIER = () -> EMPTY_VARS;
@@ -143,6 +146,7 @@ public class BindingContextUtils {
     contextBuilder.addBinding(PAYLOAD, message.getPayload());
     contextBuilder.addBinding(DATA_TYPE,
                               new LazyValue<>(() -> new TypedValue<>(message.getPayload().getDataType(), DATA_TYPE_DATA_TYPE)));
+    contextBuilder.addBinding(EVENT_CONTEXT, new TypedValue<>(event.getContext(), EVENT_CONTEXT_DATA_TYPE));
 
     if (event.getError().isPresent()) {
       contextBuilder.addBinding(ERROR,
