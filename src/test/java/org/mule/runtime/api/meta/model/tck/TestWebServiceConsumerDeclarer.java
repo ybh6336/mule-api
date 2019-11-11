@@ -160,7 +160,7 @@ public class TestWebServiceConsumerDeclarer extends TestBaseDeclarer {
     operation.withOutput().ofType(getNumberType());
     operation.withOutputAttributes().ofType(getStringType());
 
-    FunctionDeclarer function = extensionDeclarer.withFunction(FUNCTION_NAME).describedAs(FUNCTION_DESCRIPTION);
+    FunctionDeclarer function = extensionDeclarer.  withFunction(FUNCTION_NAME).describedAs(FUNCTION_DESCRIPTION);
     function.onParameterGroup(DEFAULT_GROUP_NAME).withRequiredParameter(USERNAME).describedAs(USERNAME_DESCRIPTION)
         .ofType(getStringType());
     function.withOutput().ofType(getNumberType());

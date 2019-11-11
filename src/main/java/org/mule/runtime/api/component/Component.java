@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
  *
  * @since 1.0
  */
-public interface Component {
+public interface  Component {
 
 
   /**
