@@ -6,7 +6,7 @@ def UPSTREAM_PROJECTS_LIST = [ "Mule-runtime/metadata-model-api/master",
 
 Map pipelineParams = [ "upstreamProjects" : UPSTREAM_PROJECTS_LIST.join(','),
                        "mavenSettingsXmlId" : "mule-runtime-maven-settings-MuleSettings",
-                       "pathsToAudit" : [ "org/mule/runtime/mule-api/1.3.0-SNAPSHOT/mule-api-1.3.0-SNAPSHOT-tests.jar" ]
+                       "pathsToAudit" : [ "org/mule/runtime/mule-api/1.3.0-SNAPSHOT/mule-api-1.3.0-SNAPSHOT.jar" ]
                       ]
 
 runtimeProjectsBuild(pipelineParams)
