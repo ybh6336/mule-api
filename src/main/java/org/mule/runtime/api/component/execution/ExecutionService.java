@@ -11,6 +11,7 @@ import org.mule.runtime.api.component.Component;
 import org.mule.runtime.api.component.location.Location;
 import org.mule.runtime.api.event.Event;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -37,6 +38,8 @@ public interface ExecutionService {
    * @param event {@link Event} with the input information
    * @return a {@link CompletableFuture<Event>} that when completed,returns the {@link Event} that results of executing the {@link Component} in the given {@link Location} with the provided input {@link Event}
    */
-  CompletableFuture<Event> execute(Location location, Event event);
+  CompletableFuture<Event> execute(Event event, Location location);
+
+  CompletableFuture<Event> execute(Event event, List<Location> locations);
 
 }
