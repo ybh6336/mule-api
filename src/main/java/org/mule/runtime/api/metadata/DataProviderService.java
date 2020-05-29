@@ -8,15 +8,17 @@ package org.mule.runtime.api.metadata;
 
 
 import org.mule.api.annotation.NoImplement;
-import org.mule.runtime.app.declaration.api.ConnectionElementDeclaration;
+import org.mule.runtime.api.value.ValueResult;
+import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
 
-import java.util.List;
 import java.util.Map;
 
 //TODO: Validate name
 @NoImplement
 public interface DataProviderService {
 
-  Map<String, List<String>> getValues(ConnectionElementDeclaration connectionDeclaration);
+  Map<String, ValueResult> discover();
+
+  ValueResult getValues(ComponentElementDeclaration component, String parameterName);
 
 }
